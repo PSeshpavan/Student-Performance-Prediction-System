@@ -85,3 +85,6 @@ python -m src.my_project.pipelines.training_pipeline
 *   **Model Monitoring**: Compares statistical properties (Mean, Std Dev) of the new data against the training baseline to alert on drift.
 *   **Data Transformation**: Handles missing values, performs One-Hot Encoding for categorical variables, and scales numerical features.
 *   **Model Trainer**: Trains multiple models (Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoost, AdaBoost), checks their performance, and saves the best one (threshold: R2 > 0.6).
+
+
+Test Deploy 1
