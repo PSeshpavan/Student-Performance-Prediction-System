@@ -124,16 +124,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Exam Performance Predictor</title>
+    <title>Student Performance Prediction System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h1>Student Exam Performance Indicator</h1>
+        <h3>Student Exam Performance Indicator</h3>
 
         <form id="predictForm" action="{{ url_for('predict_datapoint') }}" method="post">
-            <legend>Student Exam Performance Prediction</legend>
+            <!-- <legend>Student Exam Performance Prediction</legend> -->
 
             <div class="form-group">
                 <label>Gender</label>
