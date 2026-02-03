@@ -1,10 +1,7 @@
 name: workflow
 # Trigger deployment
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 permissions:
   id-token: write
