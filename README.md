@@ -84,8 +84,4 @@ python -m src.my_project.pipelines.training_pipeline
 *   **Data Ingestion**: Reads from source (SQL/CSV/API), splits into Train/Test, and saves artifacts.
 *   **Model Monitoring**: Compares statistical properties (Mean, Std Dev) of the new data against the training baseline to alert on drift.
 *   **Data Transformation**: Handles missing values, performs One-Hot Encoding for categorical variables, and scales numerical features.
-<<<<<<< HEAD
 *   **Model Trainer**: Trains multiple models (Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoost, AdaBoost), checks their performance, and saves the best one (threshold: R2 > 0.6).
-=======
-*   **Model Trainer**: Trains multiple models (Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoost, AdaBoost), checks their performance, and saves the best one (threshold: R2 > 0.6).
->>>>>>> e98317db8d1ef835408323736bdb1508fbff6186
