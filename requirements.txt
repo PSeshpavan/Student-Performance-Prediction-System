@@ -11,3 +11,4 @@ scikit-learn
 mlflow
 dagshub
 # -e .
+gunicorn

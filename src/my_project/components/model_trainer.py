@@ -24,14 +24,20 @@ from src.my_project.utils import (
     save_object,
     evaluate_models,
 )
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure MLflow directly without dagshub
 # Set the tracking URI directly to your DagsHub MLflow instance
-mlflow.set_tracking_uri("https://dagshub.com/PSeshpavan/DS_Project-1.mlflow")
+mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+if mlflow_tracking_uri:
+    mlflow.set_tracking_uri(mlflow_tracking_uri)
 
 # Set these environment variables for authentication
-os.environ["MLFLOW_TRACKING_USERNAME"] = "PSeshpavan"  # Your DagsHub username
-os.environ["MLFLOW_TRACKING_PASSWORD"] = "f330018b6caa3e8f1b890d09fbc2097461a70429"  # Your access token
+os.environ["MLFLOW_TRACKING_USERNAME"] = os.getenv("MLFLOW_TRACKING_USERNAME", "")
+os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("MLFLOW_TRACKING_PASSWORD", "")
 
 
 @dataclass
