@@ -1,8 +1,0 @@
-Commands for dvc (data version control)
-
-1. dvc init
-    To initialize a dvc environment
-2. dvc add <file_path>
-    To add the data into dvc environment (similar to commit)
-3. dvc checkout
-    To rollback the previous commit
