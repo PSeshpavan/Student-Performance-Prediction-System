@@ -1,5 +1,5 @@
+[![CI/CD Pipeline](https://github.com/PSeshpavan/Student-Performance-Prediction-System/actions/workflows/main.yaml/badge.svg)](https://github.com/PSeshpavan/Student-Performance-Prediction-System/actions/workflows/main.yaml)
 # Student Performance Prediction System
-
 An **End-to-End Machine Learning Web Application** designed to predict student academic performance based on demographic and behavioral data. This project demonstrates a production-grade MLOps workflow involving modular code, automated pipelines, experiment tracking, and data versioning.
 
 ## 🚀 Key Features
@@ -86,5 +86,29 @@ python -m src.my_project.pipelines.training_pipeline
 *   **Data Transformation**: Handles missing values, performs One-Hot Encoding for categorical variables, and scales numerical features.
 *   **Model Trainer**: Trains multiple models (Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoost, AdaBoost), checks their performance, and saves the best one (threshold: R2 > 0.6).
 
+## 🏆 Model Performance
+
+After evaluating multiple regressors, the winning model is **Linear Regression**. The performance metrics on the test dataset are explicitly stated below:
+
+*   **R2 Score**: 0.8852
+*   **Mean Absolute Error (MAE)**: 4.1744
+*   **Root Mean Squared Error (RMSE)**: 5.4489
+
+## 📈 Data Drift Monitoring
+
+The monitoring component systematically checks for data drift between the training (reference) data and any new/incoming (current) data before moving to the transformation stage.
+*   **Mechanism**: Compares statistical properties (Mean and Standard Deviation) for all numerical features.
+*   **Threshold**: Drift is triggered if the absolute difference in the mean of any feature between the reference and current dataset exceeds **1.0 standard deviation** (`diff > train_std * 1.0`). If drift is detected, the pipeline alerts the system, indicating a potential need for model retraining.
+
+## 🏗️ Project Architecture
+
+```mermaid
+flowchart LR
+    A[Data Ingestion] --> B[Data Transformation]
+    B --> C[Drift Check]
+    C --> D[Model Training]
+    D --> E[Model Evaluation]
+    E --> F[Flask Prediction App]
+```
 
 Test Deploy 1
